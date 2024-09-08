@@ -1,0 +1,30 @@
+{
+  "name": "next-nest-temporal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:next": "npm run dev:next --prefix apps/next-app",
+    "dev:nest": "npm run start --prefix apps/nest-app",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:nest\"",
+    "build:temporal": "tsc --build ./apps/temporal/tsconfig.json",
+    "start:worker": "nodemon ./apps/temporal/lib/worker",
+    "next:install": "npm run next:install --prefix apps/next-app",
+    "nest:install": "npm run nest:install --prefix apps/nest-app",
+    "install-all": "npm i && npm run next:install && npm run nest:install"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "concurrently": "^7.6.0",
+    "nodemon": "^3.1.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@temporalio/activity": "^1.11.1",
+    "@temporalio/client": "^1.11.1",
+    "@temporalio/worker": "^1.11.1",
+    "@temporalio/workflow": "^1.11.1"
+  }
+}
