@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:next": "npm run dev:next --prefix apps/next-app",
+    "dev:next": "npm run dev --prefix next-app",
     "dev:nest": "npm run start --prefix apps/nest-app",
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:nest\"",
     "build:temporal": "tsc --build ./apps/temporal/tsconfig.json",
     "start:worker": "nodemon ./apps/temporal/lib/worker",
-    "next:install": "npm run next:install --prefix apps/next-app",
+    "next:install": "npm run next:install --prefix  next-app",
     "nest:install": "npm run nest:install --prefix apps/nest-app",
     "install-all": "npm i && npm run next:install && npm run nest:install"
   },

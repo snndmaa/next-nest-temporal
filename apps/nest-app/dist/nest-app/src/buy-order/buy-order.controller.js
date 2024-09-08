@@ -31,6 +31,7 @@ async function startWorkflow() {
         console.log('Workflow Started');
     }
     catch (error) {
+        console.log(error.name);
         if (error.name === 'WorkflowExecutionAlreadyStartedError') {
             console.log('Workflow execution already started. Retrieving existing workflow handle.');
             temporalHandle = temporalClient.workflow.getHandle(shared_1.workflowId);
